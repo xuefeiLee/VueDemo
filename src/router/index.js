@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import home from '@/components/home'
+import Work from '@/view/Work/work'
 
 Vue.use(Router)
 
@@ -8,18 +9,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'home',
+      component: home
     },
     {
-      // 工作台
-      path: 'work',
+      path: '/work',
       name: 'Work',
-      component: resolve => {
-        require.ensure(['../components/Work/work.vue'], () => {
-          resolve(require('../components/Work/work.vue'))
-        })
-      }
+      component: Work
     }
   ]
 })
